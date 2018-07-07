@@ -1,0 +1,360 @@
+.mine {
+            width:200px;
+            height:250px;
+            float:left;
+            background-size:180px 250px;
+            margin:5px;
+            background-repeat:no-repeat;
+            background-position:10px;
+        }
+        .back {
+             background-image:url(../rubashka.png);
+             cursor:pointer;
+        }
+        .mine img {
+            height:250px;
+            margin-left:10px;
+            cursor:auto;
+        }
+        .mine img.rest {
+            display:none;
+        }
+        .wrop {
+            width:1280px;
+            float:Left;
+            height:700px;
+        }
+        body {
+            background-color:#1C7430;
+        }
+        h1 {
+            font-family: 'Open Sans', sans-serif;
+            font-size:28px;
+            color:#fff;
+            text-align:center;
+        }
+        .start-game-button {
+            width:144px;
+            height:42px;
+            background-color:#fff;
+            border:none;
+            cursor:pointer;
+            color:#1C7430;
+            font-size:16px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .start-game-screen {
+            width:600px;
+            height:373px;
+            margin:0 auto;
+            position:absolute;
+            top: 50%;
+            left:50%;
+            margin-left:-300px;
+            margin-top:-186px;
+            text-align:center;
+        }
+        #wrop {
+            display:none;
+        }
+        body,html {
+            width:100%;
+            height:100%;
+        }
+        #end {
+            display:none;
+        }
+        #let-new-game {
+            width:150px;
+            height:19px;
+            font-size:14px;
+            color:#fff;
+            background-color:transparent;
+            border:none;
+            font-family: 'Open Sans', sans-serif;
+            float:left;
+            margin-top:10px;
+            cursor:pointer;
+            outline:None;
+        }
+        .scores {
+            float:right;
+            width:100px;
+        }
+        .scores p {
+            float:left;
+            color:#fff;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .top-part {
+            width:100%;
+            float:left;
+            height:50px;
+        }
+        .end-game-button {
+            width:144px;
+            height:42px;
+            background-color:#fff;
+            border:none;
+            cursor:pointer;
+            color:#1C7430;
+            font-size:16px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        #endscore {
+            color:#fff;
+            font-family: 'Open Sans', sans-serif;
+            font-size:16px;
+        }
+.mine.rest[data-card="QH.png"] {
+        background-image: url(../img/QH.png);
+}
+
+.mine.rest[data-card="0C.png"] {
+        background-image: url(../img/0C.png);
+}
+
+.mine.rest[data-card="JS.png"] {
+        background-image: url(../img/JS.png);
+}
+
+.mine.rest[data-card="3C.png"] {
+        background-image: url(../img/3C.png);
+}
+
+.mine.rest[data-card="4S.png"] {
+        background-image: url(../img/4S.png);
+}
+
+.mine.rest[data-card="3D.png"] {
+        background-image: url(../img/3D.png);
+}
+
+.mine.rest[data-card="8D.png"] {
+        background-image: url(../img/8D.png);
+}
+
+
+
+.mine.rest[data-card="6S.png"] {
+        background-image: url(../img/6S.png);
+}
+
+.mine.rest[data-card="7D.png"] {
+        background-image: url(../img/7D.png);
+}
+
+.mine.rest[data-card="0D.png"] {
+        background-image: url(../img/0D.png);
+}
+
+.mine.rest[data-card="0C.png"] {
+        background-image: url(../img/0C.png);
+}
+
+.mine.rest[data-card="0S.png"] {
+        background-image: url(../img/0S.png);
+}
+
+.mine.rest[data-card="0H.png"] {
+        background-image: url(../img/0H.png);
+}
+
+.mine.rest[data-card="2D.png"] {
+        background-image: url(../img/2D.png);
+}
+
+.mine.rest[data-card="2C.png"] {
+        background-image: url(../img/2C.png);
+}
+
+.mine.rest[data-card="2S.png"] {
+        background-image: url(../img/2S.png);
+}
+
+.mine.rest[data-card="2H.png"] {
+        background-image: url(../img/2H.png);
+}
+
+
+.mine.rest[data-card="3D.png"] {
+        background-image: url(../img/3D.png);
+}
+
+.mine.rest[data-card="3C.png"] {
+        background-image: url(../img/3C.png);
+}
+
+.mine.rest[data-card="3S.png"] {
+        background-image: url(../img/3S.png);
+}
+
+.mine.rest[data-card="3H.png"] {
+        background-image: url(../img/3H.png);
+}
+
+
+.mine.rest[data-card="4D.png"] {
+        background-image: url(../img/4D.png);
+}
+
+.mine.rest[data-card="4C.png"] {
+        background-image: url(../img/4C.png);
+}
+
+.mine.rest[data-card="4S.png"] {
+        background-image: url(../img/4S.png);
+}
+
+.mine.rest[data-card="4H.png"] {
+        background-image: url(../img/4H.png);
+}
+
+.mine.rest[data-card="5D.png"] {
+        background-image: url(../img/5D.png);
+}
+
+.mine.rest[data-card="5C.png"] {
+        background-image: url(../img/5C.png);
+}
+
+.mine.rest[data-card="5S.png"] {
+        background-image: url(../img/5S.png);
+}
+
+.mine.rest[data-card="5H.png"] {
+        background-image: url(../img/5H.png);
+}
+
+.mine.rest[data-card="6D.png"] {
+        background-image: url(../img/6D.png);
+}
+
+.mine.rest[data-card="6C.png"] {
+        background-image: url(../img/6C.png);
+}
+
+.mine.rest[data-card="6S.png"] {
+        background-image: url(../img/6S.png);
+}
+
+.mine.rest[data-card="6H.png"] {
+        background-image: url(../img/6H.png);
+}
+
+.mine.rest[data-card="7D.png"] {
+        background-image: url(../img/7D.png);
+}
+
+.mine.rest[data-card="7C.png"] {
+        background-image: url(../img/7C.png);
+}
+
+.mine.rest[data-card="7S.png"] {
+        background-image: url(../img/7S.png);
+}
+
+.mine.rest[data-card="7H.png"] {
+        background-image: url(../img/7H.png);
+}
+
+
+.mine.rest[data-card="8D.png"] {
+        background-image: url(../img/8D.png);
+}
+
+.mine.rest[data-card="8C.png"] {
+        background-image: url(../img/8C.png);
+}
+
+.mine.rest[data-card="8S.png"] {
+        background-image: url(../img/8S.png);
+}
+
+.mine.rest[data-card="8H.png"] {
+        background-image: url(../img/8H.png);
+}
+
+.mine.rest[data-card="9D.png"] {
+        background-image: url(../img/9D.png);
+}
+
+.mine.rest[data-card="9C.png"] {
+        background-image: url(../img/9C.png);
+}
+
+.mine.rest[data-card="9S.png"] {
+        background-image: url(../img/9S.png);
+}
+
+.mine.rest[data-card="9H.png"] {
+        background-image: url(../img/9H.png);
+}
+
+
+.mine.rest[data-card="AD.png"] {
+        background-image: url(../img/AD.png);
+}
+
+.mine.rest[data-card="AC.png"] {
+        background-image: url(../img/AC.png);
+}
+
+.mine.rest[data-card="AS.png"] {
+        background-image: url(../img/AS.png);
+}
+
+.mine.rest[data-card="AH.png"] {
+        background-image: url(../img/AH.png);
+}
+
+
+.mine.rest[data-card="JD.png"] {
+        background-image: url(../img/JD.png);
+}
+
+.mine.rest[data-card="JC.png"] {
+        background-image: url(../img/JC.png);
+}
+
+.mine.rest[data-card="JS.png"] {
+        background-image: url(../img/JS.png);
+}
+
+.mine.rest[data-card="JH.png"] {
+        background-image: url(../img/JH.png);
+}
+
+
+.mine.rest[data-card="KD.png"] {
+        background-image: url(../img/KD.png);
+}
+
+.mine.rest[data-card="KC.png"] {
+        background-image: url(../img/KC.png);
+}
+
+.mine.rest[data-card="KS.png"] {
+        background-image: url(../img/KS.png);
+}
+
+.mine.rest[data-card="KH.png"] {
+        background-image: url(../img/KH.png);
+}
+
+
+.mine.rest[data-card="QD.png"] {
+        background-image: url(../img/QD.png);
+}
+
+.mine.rest[data-card="QC.png"] {
+        background-image: url(../img/QC.png);
+}
+
+.mine.rest[data-card="QS.png"] {
+        background-image: url(../img/QS.png);
+}
+
+.mine.rest[data-card="QH.png"] {
+        background-image: url(../img/QH.png);
+}

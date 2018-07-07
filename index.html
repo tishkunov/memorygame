@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Memory Game</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <div class="start-game-screen" id="strt">
+         <img src="StartGame.png" alt="Начало игры">
+         <h1>Memory Game</h1>
+         <button id="start" class="start-game-button">Начать игру</button>
+     </div>
+     
+    <div class="wrop" id="wrop">
+        
+        <div class="top-part">
+            <button id="let-new-game" >Начать заново</button>
+            <div class="scores">
+                <p>Очки:</p>
+                <p id="score">0</p>
+            </div>
+        </div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back"></div>
+        <div class="mine back "></div>
+        <div class="mine back "></div>
+       
+    </div>
+    
+    <div class="start-game-screen" id="end">
+        <img src="Group2.png" alt="Начало игры">
+         <h1>Поздравляем</h1>
+         <p id="endscore">Ваш счет: </p>
+         <button class="end-game-button" onclick="game.startGame();">Еще раз</button>
+    </div>
+
+<script>
+    ;
+    'use strict';
+
+    var d = document;
+    var getId = function(id) {
+        return d.getElementById(id);
+    }
+
+    var ss = getId('start');
+
+   
+
+    var mainArr = [
+    'QS.png','QH.png','QD.png','QC.png','KS.png','KH.png','KD.png','KC.png','JS.png','JH.png','JD.png','JC.png','AS.png',
+    'AH.png','AD.png','AC.png','9S.png','9H.png','9D.png','9C.png',
+    '8S.png','8H.png','8D.png','8C.png','7S.png','7H.png','7D.png','7C.png','6S.png','6H.png','6D.png','6C.png','5S.png','5H.png',
+    '5D.png','5C.png','4S.png','4H.png','4D.png','4C.png','3S.png','3H.png','3D.png','3C.png','2S.png','2H.png','2D.png','2C.png',
+    '0S.png','0H.png','0D.png','0C.png',
+    ];
+    
+    var scoreHtml = getId('score');
+    var letNewGame = getId('let-new-game');
+    
+    function Game() {
+        this.score = 0;
+        this.countCards = 18;
+        this.lastImg;
+        this.currentStateClick = false;
+        this.arrCards = [];     
+        this.cardOptions = {
+            classShow: 'rest',
+            classback: 'back',
+        }
+
+    }
+
+    
+
+    Game.prototype.startGame = function(arr) {
+        var strt = getId('strt');
+        strt.style.display = 'none';
+
+        var end = getId('end'); 
+        end.style.display = "none";
+        
+        var wrop = getId('wrop'); 
+        wrop.style.display = 'block';
+
+        this.randomizeArr(arr);
+
+    }
+
+    Game.prototype.randomizeArr = function(cards) {
+        for (i = 0; i < 10; i++) { // Make random arr with range includes cards and duplicate
+            var randomNumber = Math.floor(Math.random() * (49 - 1 + 1) + 1);
+            if (this.arrCards.indexOf(randomNumber) === -1) {
+                this.arrCards.push(randomNumber, randomNumber);    
+            } else {
+                i--;
+            }
+        }
+
+        this.arrCards.sort(function(a, b) { //random sorting arr
+            return Math.random() - 0.5;
+        });
+
+        var mines = d.getElementsByClassName('mine');
+
+        for (i = 0; i < mines.length; i++) {
+            mines[i].setAttribute('data-card', cards[this.arrCards[i]]); 
+        }
+    }
+
+    
+    Game.prototype.litCard = function(e) {
+        if (!this.currentStateClick) {
+            e.target.classList.add(this.cardOptions.classShow);
+            this.lastImg = e.target;
+            this.currentStateClick = true;
+        } else {
+            this.currentStateClick = false;
+            e.target.classList.add(this.cardOptions.classShow);
+            var self = this; 
+            if (this.lastImg.getAttribute("data-card") === e.target.getAttribute("data-card")) {
+                this.countCards -= 2;
+                this.score = this.score + this.countCards*42;
+                if (this.countCards === 0) {
+                        this.endGame();
+                } else {
+                    setTimeout(function(){
+                        self.lastImg.className = 'mine';
+                        e.target.className = 'mine';
+                     }, 3000) 
+                } 
+            } else {
+                this.score = this.score - ((18 - this.countCards)*42); 
+                this.lastImg.classList.add("rest"); 
+                e.target.classList.add("rest"); 
+                setTimeout(function(){
+                    self.lastImg.classList.remove("rest"); 
+                    e.target.classList.remove("rest"); 
+                }, 3000) 
+                
+            }
+            scoreHtml.innerHTML = String(this.score); 
+        }
+        
+        letNewGame.onclick = function() {
+            if (!this.currentStateClick) {
+                this.currentStateClick = false;
+                this.score = 0;
+                this.arrCards = [];
+                this.startGame();
+            }
+        }
+    };
+    
+    
+    Game.prototype.endGame = function(){
+        this.arrCards = [];
+        var wrop = getId('wrop'); wrop.style.display = "none";
+        var end = getId('end'); end.style.display = "block";
+        var endscore = getId('endscore');  
+        endscore.innerHTML = "Ваш счет: " + String(this.score);
+    }
+
+
+    var game = new Game();
+
+    var wrop = getId('wrop'); 
+    wrop.addEventListener('click', function(e){
+        game.litCard(e);
+    })
+    ss.addEventListener('click', function(){
+        game.startGame(mainArr);
+    });
+</script>
+</body>
+</html>
